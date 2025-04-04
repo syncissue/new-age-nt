@@ -1,0 +1,730 @@
+{
+  "dares": [
+    {
+      "tier": "Spicer",
+      "text": "Wink at your partner 3 times",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a 10-second shoulder massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Whisper something sweet in their ear",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Hold hands for 20 seconds",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Play with their hair for 15 seconds",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick peck on the cheek",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Draw a heart on their hand",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Share a secret with them",
+      "points": 3,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick hug",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Make a funny face at them",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick back scratch",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Whisper a joke in their ear",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick foot massage",
+      "points": 3,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Draw a smiley face on their arm",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick hand massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Make a heart shape with your hands",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick neck massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Write 'I ❤️ U' on their arm",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick arm massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Make a funny sound",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick leg massage",
+      "points": 3,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Draw a star on their hand",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick face massage",
+      "points": 3,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Make a funny dance move",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick scalp massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Draw a flower on their arm",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick ear massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Make a funny pose",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick finger massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Draw a sun on their hand",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick wrist massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Make a funny noise",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick elbow massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Draw a moon on their arm",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick knee massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Make a funny expression",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick ankle massage",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Draw a cloud on their hand",
+      "points": 2,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Give a quick toe massage",
+      "points": 3,
+      "duration": 30
+    },
+    {
+      "tier": "Spicer",
+      "text": "Make a funny gesture",
+      "points": 1,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss neck 5 times",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a passionate kiss",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Nibble on their ear",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a hickey",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their collarbone",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a French kiss",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their shoulder",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a love bite",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their back",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a neck massage with kisses",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their arm",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a shoulder massage with kisses",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their hand",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a back massage with kisses",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their cheek",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a face massage with kisses",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their forehead",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a scalp massage with kisses",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their nose",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give an ear massage with kisses",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their chin",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a neck kiss with massage",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their temple",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a shoulder kiss with massage",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their jawline",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a back kiss with massage",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their earlobe",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a face kiss with massage",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their wrist",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a scalp kiss with massage",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their elbow",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give an ear kiss with massage",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their knee",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a neck kiss with nibbles",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their ankle",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a shoulder kiss with nibbles",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their toe",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a back kiss with nibbles",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their finger",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a face kiss with nibbles",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their thumb",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a scalp kiss with nibbles",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their palm",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give an ear kiss with nibbles",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their knuckle",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a neck kiss with licks",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their nail",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a shoulder kiss with licks",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their cuticle",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a back kiss with licks",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their fingertip",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a face kiss with licks",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their wrist bone",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a scalp kiss with licks",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their elbow crease",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give an ear kiss with licks",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their knee cap",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a neck kiss with bites",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their ankle bone",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a shoulder kiss with bites",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their toe nail",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a back kiss with bites",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their finger tip",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a face kiss with bites",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their thumb nail",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give a scalp kiss with bites",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Kiss their palm crease",
+      "points": 5,
+      "duration": 30
+    },
+    {
+      "tier": "Wild",
+      "text": "Give an ear kiss with bites",
+      "points": 6,
+      "duration": 30
+    },
+    {
+      "tier": "Extreme",
+      "text": "Sweaty Tug-of-War",
+      "points": 7,
+      "duration": 90
+    },
+    {
+      "tier": "Extreme",
+      "text": "Passionate Wrestling Match",
+      "points": 8,
+      "duration": 90
+    },
+    {
+      "tier": "Extreme",
+      "text": "Intense Arm Wrestling",
+      "points": 7,
+      "duration": 60
+    },
+    {
+      "tier": "Extreme",
+      "text": "Hot and Heavy Pillow Fight",
+      "points": 8,
+      "duration": 90
+    },
+    {
+      "tier": "Extreme",
+      "text": "Steamy Thumb War",
+      "points": 7,
+      "duration": 60
+    },
+    {
+      "tier": "Extreme",
+      "text": "Passionate Push-Up Contest",
+      "points": 8,
+      "duration": 90
+    },
+    {
+      "tier": "Extreme",
+      "text": "Intense Staring Contest",
+      "points": 7,
+      "duration": 60
+    },
+    {
+      "tier": "Extreme",
+      "text": "Hot and Heavy Dance Battle",
+      "points": 8,
+      "duration": 90
+    },
+    {
+      "tier": "Extreme",
+      "text": "Steamy Hand Squeeze Contest",
+      "points": 7,
+      "duration": 60
+    },
+    {
+      "tier": "Extreme",
+      "text": "Passionate Breath Holding Contest",
+      "points": 8,
+      "duration": 90
+    },
+    {
+      "tier": "Dark Finale",
+      "text": "Blind Touch Race",
+      "points": 10,
+      "duration": 180
+    },
+    {
+      "tier": "Dark Finale",
+      "text": "Sensory Deprivation Challenge",
+      "points": 10,
+      "duration": 120
+    },
+    {
+      "tier": "Dark Finale",
+      "text": "Complete Darkness Dare",
+      "points": 10,
+      "duration": 150
+    }
+  ]
+}
