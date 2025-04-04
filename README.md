@@ -10,33 +10,34 @@ A fun and exciting party game with different tiers of dares!
 npm install
 ```
 
-2. Set up environment variables:
-
-   - Copy `.env.example` to `.env`:
-     ```bash
-     cp .env.example .env
-     ```
-   - Fill in your Firebase and Google Cloud credentials in `.env`
-
-3. Start the development server:
+2. Start the development server:
 
 ```bash
 npx expo start
 ```
 
-## Environment Variables
+## Configuration
 
-This project uses environment variables for sensitive configuration. To set up:
+The game uses two types of configuration:
 
-1. Create a `.env` file in the root directory
-2. Add your configuration values:
-   ```
-   FIREBASE_API_KEY=your_api_key
-   FIREBASE_AUTH_DOMAIN=your_auth_domain
-   ...
-   ```
+### Client Configuration
 
-Never commit the `.env` file or any files containing actual credentials!
+The client-side Firebase configuration is included in the code and is safe to be public. This allows the game to work on any computer without additional setup.
+
+### Admin Configuration (Optional)
+
+If you need to run admin operations (like uploading new dares), you'll need to:
+
+1. Copy `.env.example` to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+2. Fill in your Google Cloud credentials in `.env` for admin operations
+3. Set `ADMIN_ENABLED=true` in `.env`
+
+Note: Admin configuration is only needed for administrative tasks, not for playing the game.
 
 ## Development
 
@@ -46,10 +47,10 @@ Never commit the `.env` file or any files containing actual credentials!
 
 ## Security Notes
 
-- Never commit sensitive credentials or API keys
-- Always use environment variables for secrets
+- Client-side Firebase configuration is public and safe to share
+- Admin credentials in `.env` are private and should never be committed
 - Keep the `.env` file secure and never share it
-- Use `.env.example` as a template for required variables
+- Use `.env.example` as a template for admin variables
 
 ## Contributing
 
