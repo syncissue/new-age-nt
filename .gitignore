@@ -31,6 +31,18 @@ yarn-error.*
 
 # local env files
 .env*.local
+.env
+.env.development
+.env.test
+.env.production
 
 # typescript
 *.tsbuildinfo
+
+# Service account keys and credentials
+**/serviceAccountKey.json
+**/credentials.json
+**/client_secret*.json
+
+# Logs
+*.log
