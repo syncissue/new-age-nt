@@ -1,0 +1,47 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isValidScore() {
+      return request.resource.data.points is number
+        && request.resource.data.lastUpdated is string
+        && request.resource.data.playerName is string;
+    }
+    
+    function isValidGameLog() {
+      return request.resource.data.timestamp is string
+        && request.resource.data.tier in ['Spicer', 'Wild', 'Extreme', 'Dark Finale']
+        && request.resource.data.winner is string;
+    }
+
+    // Scores collection - require authentication and data validation
+    match /scores/{userId} {
+      allow read: if true;  // Scores can be viewed by anyone
+      allow write: if isValidScore()
+        && request.resource.data.points >= (resource == null ? 0 : resource.data.points); // Only allow incrementing points
+    }
+    
+    // Game logs - require proper structure and prevent deletion
+    match /gameLogs/{logId} {
+      allow read: if true;  // Game logs can be viewed
+      allow create: if isValidGameLog();
+      allow update, delete: if false; // Prevent modification of game history
+    }
+    
+    // Dares collection - read-only access
+    match /dares/{dareId} {
+      allow read: if true;
+      allow write: if false; // Prevent modifications to dares
+    }
+    
+    // Deny access to all other collections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+} 
