@@ -1,0 +1,265 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hemant.raaj.daretodare"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:4:3-75
+11-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:4:20-73
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:2:3-64
+12-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:2:20-62
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:3:3-77
+13-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:3:20-75
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:5:3-63
+14-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:5:20-61
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:6:3-78
+15-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:6:20-76
+16
+17    <queries>
+17-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:7:3-13:13
+18        <intent>
+18-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:8:5-12:14
+19            <action android:name="android.intent.action.VIEW" />
+19-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:9:7-58
+19-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:9:15-56
+20
+21            <category android:name="android.intent.category.BROWSABLE" />
+21-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:10:7-67
+21-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:10:17-65
+22
+23            <data android:scheme="https" />
+23-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:11:7-37
+23-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:11:13-35
+24        </intent>
+25        <!-- Query open documents -->
+26        <intent>
+26-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:9-17:18
+27            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+27-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:16:13-79
+27-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:16:21-76
+28        </intent>
+29        <intent>
+29-->[:expo-web-browser] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-web-browser/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:9-12:18
+30
+31            <!-- Required for opening tabs if targeting API 30 -->
+32            <action android:name="android.support.customtabs.action.CustomTabsService" />
+32-->[:expo-web-browser] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-web-browser/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-90
+32-->[:expo-web-browser] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-web-browser/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:21-87
+33        </intent>
+34    </queries>
+35
+36    <permission
+36-->[androidx.core:core:1.13.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/ff2f7080433a150db5a1d0c5225722e6/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+37        android:name="com.hemant.raaj.daretodare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+37-->[androidx.core:core:1.13.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/ff2f7080433a150db5a1d0c5225722e6/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+38        android:protectionLevel="signature" />
+38-->[androidx.core:core:1.13.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/ff2f7080433a150db5a1d0c5225722e6/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+39
+40    <uses-permission android:name="com.hemant.raaj.daretodare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+40-->[androidx.core:core:1.13.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/ff2f7080433a150db5a1d0c5225722e6/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+40-->[androidx.core:core:1.13.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/ff2f7080433a150db5a1d0c5225722e6/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+41
+42    <application
+42-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:14:3-31:17
+43        android:name="com.hemant.raaj.daretodare.MainApplication"
+43-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:14:16-47
+44        android:allowBackup="true"
+44-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:14:162-188
+45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+45-->[androidx.core:core:1.13.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/ff2f7080433a150db5a1d0c5225722e6/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+46        android:debuggable="true"
+47        android:extractNativeLibs="false"
+48        android:icon="@mipmap/ic_launcher"
+48-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:14:81-115
+49        android:label="@string/app_name"
+49-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:14:48-80
+50        android:roundIcon="@mipmap/ic_launcher_round"
+50-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:14:116-161
+51        android:supportsRtl="true"
+51-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:14:221-247
+52        android:theme="@style/AppTheme"
+52-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:14:189-220
+53        android:usesCleartextTraffic="true" >
+53-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/debug/AndroidManifest.xml:6:18-53
+54        <meta-data
+54-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:15:5-83
+55            android:name="expo.modules.updates.ENABLED"
+55-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:15:16-59
+56            android:value="false" />
+56-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:15:60-81
+57        <meta-data
+57-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:16:5-105
+58            android:name="expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH"
+58-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:16:16-80
+59            android:value="ALWAYS" />
+59-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:16:81-103
+60        <meta-data
+60-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:17:5-99
+61            android:name="expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS"
+61-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:17:16-79
+62            android:value="0" />
+62-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:17:80-97
+63
+64        <activity
+64-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:18:5-30:16
+65            android:name="com.hemant.raaj.daretodare.MainActivity"
+65-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:18:15-43
+66            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|uiMode"
+66-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:18:44-134
+67            android:exported="true"
+67-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:18:253-276
+68            android:launchMode="singleTask"
+68-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:18:135-166
+69            android:screenOrientation="portrait"
+69-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:18:277-313
+70            android:theme="@style/Theme.App.SplashScreen"
+70-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:18:207-252
+71            android:windowSoftInputMode="adjustPan" >
+71-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:18:167-206
+72            <intent-filter>
+72-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:19:7-22:23
+73                <action android:name="android.intent.action.MAIN" />
+73-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:20:9-60
+73-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:20:17-58
+74
+75                <category android:name="android.intent.category.LAUNCHER" />
+75-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:21:9-68
+75-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:21:19-66
+76            </intent-filter>
+77            <intent-filter>
+77-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:23:7-29:23
+78                <action android:name="android.intent.action.VIEW" />
+78-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:9:7-58
+78-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:9:15-56
+79
+80                <category android:name="android.intent.category.DEFAULT" />
+80-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:25:9-67
+80-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:25:19-65
+81                <category android:name="android.intent.category.BROWSABLE" />
+81-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:10:7-67
+81-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:10:17-65
+82
+83                <data android:scheme="com.hemant.raaj.daretodare" />
+83-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:11:7-37
+83-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:11:13-35
+84                <data android:scheme="exp+daretodare" />
+84-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:11:7-37
+84-->/Users/samratsingh/training-n-all/dare-you/DareToDare-new/android/app/src/main/AndroidManifest.xml:11:13-35
+85            </intent-filter>
+86        </activity>
+87
+88        <provider
+88-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:21:9-30:20
+89            android:name="expo.modules.filesystem.FileSystemFileProvider"
+89-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:22:13-74
+90            android:authorities="com.hemant.raaj.daretodare.FileSystemFileProvider"
+90-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:23:13-74
+91            android:exported="false"
+91-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:24:13-37
+92            android:grantUriPermissions="true" >
+92-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:25:13-47
+93            <meta-data
+93-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:27:13-29:70
+94                android:name="android.support.FILE_PROVIDER_PATHS"
+94-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:28:17-67
+95                android:resource="@xml/file_system_provider_paths" />
+95-->[:expo-file-system] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:29:17-67
+96        </provider>
+97
+98        <meta-data
+98-->[:expo-modules-core] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:9-11:89
+99            android:name="org.unimodules.core.AppLoader#react-native-headless"
+99-->[:expo-modules-core] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-79
+100            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
+100-->[:expo-modules-core] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-86
+101        <meta-data
+101-->[:expo-modules-core] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:9-15:45
+102            android:name="com.facebook.soloader.enabled"
+102-->[:expo-modules-core] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:13-57
+103            android:value="true" />
+103-->[:expo-modules-core] /Users/samratsingh/training-n-all/dare-you/DareToDare-new/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:13-33
+104
+105        <activity
+105-->[com.facebook.react:react-android:0.76.9] /Users/samratsingh/.gradle/caches/8.10.2/transforms/380020bc4ae98bb0118161d36add3474/transformed/react-android-0.76.9-debug/AndroidManifest.xml:19:9-21:40
+106            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+106-->[com.facebook.react:react-android:0.76.9] /Users/samratsingh/.gradle/caches/8.10.2/transforms/380020bc4ae98bb0118161d36add3474/transformed/react-android-0.76.9-debug/AndroidManifest.xml:20:13-77
+107            android:exported="false" />
+107-->[com.facebook.react:react-android:0.76.9] /Users/samratsingh/.gradle/caches/8.10.2/transforms/380020bc4ae98bb0118161d36add3474/transformed/react-android-0.76.9-debug/AndroidManifest.xml:21:13-37
+108
+109        <provider
+109-->[androidx.emoji2:emoji2:1.3.0] /Users/samratsingh/.gradle/caches/8.10.2/transforms/516fc94d722a4c7d46bf2d1c58cfa627/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+110            android:name="androidx.startup.InitializationProvider"
+110-->[androidx.emoji2:emoji2:1.3.0] /Users/samratsingh/.gradle/caches/8.10.2/transforms/516fc94d722a4c7d46bf2d1c58cfa627/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+111            android:authorities="com.hemant.raaj.daretodare.androidx-startup"
+111-->[androidx.emoji2:emoji2:1.3.0] /Users/samratsingh/.gradle/caches/8.10.2/transforms/516fc94d722a4c7d46bf2d1c58cfa627/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+112            android:exported="false" >
+112-->[androidx.emoji2:emoji2:1.3.0] /Users/samratsingh/.gradle/caches/8.10.2/transforms/516fc94d722a4c7d46bf2d1c58cfa627/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+113            <meta-data
+113-->[androidx.emoji2:emoji2:1.3.0] /Users/samratsingh/.gradle/caches/8.10.2/transforms/516fc94d722a4c7d46bf2d1c58cfa627/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+114                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+114-->[androidx.emoji2:emoji2:1.3.0] /Users/samratsingh/.gradle/caches/8.10.2/transforms/516fc94d722a4c7d46bf2d1c58cfa627/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+115                android:value="androidx.startup" />
+115-->[androidx.emoji2:emoji2:1.3.0] /Users/samratsingh/.gradle/caches/8.10.2/transforms/516fc94d722a4c7d46bf2d1c58cfa627/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+116            <meta-data
+116-->[androidx.lifecycle:lifecycle-process:2.8.3] /Users/samratsingh/.gradle/caches/8.10.2/transforms/9557b60ceb2f7238af5b8c04dd860dfc/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:29:13-31:52
+117                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+117-->[androidx.lifecycle:lifecycle-process:2.8.3] /Users/samratsingh/.gradle/caches/8.10.2/transforms/9557b60ceb2f7238af5b8c04dd860dfc/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:30:17-78
+118                android:value="androidx.startup" />
+118-->[androidx.lifecycle:lifecycle-process:2.8.3] /Users/samratsingh/.gradle/caches/8.10.2/transforms/9557b60ceb2f7238af5b8c04dd860dfc/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:31:17-49
+119            <meta-data
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+120                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+121                android:value="androidx.startup" />
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+122        </provider>
+123
+124        <receiver
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+125            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+126            android:directBootAware="false"
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+127            android:enabled="true"
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+128            android:exported="true"
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+129            android:permission="android.permission.DUMP" >
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+130            <intent-filter>
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+131                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+132            </intent-filter>
+133            <intent-filter>
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+134                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+135            </intent-filter>
+136            <intent-filter>
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+137                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+138            </intent-filter>
+139            <intent-filter>
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+140                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/samratsingh/.gradle/caches/8.10.2/transforms/c6979c78000bc5415a451680edfde3a6/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+141            </intent-filter>
+142        </receiver>
+143    </application>
+144
+145</manifest>

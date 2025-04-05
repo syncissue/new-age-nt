@@ -11,7 +11,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const TIERS = {
-  Spicer: {
+  Starter: {
     unlockTime: 40 * 60 * 1000, // 40 minutes
     color: "#4CAF50",
     description: "Start with some light fun",
@@ -65,8 +65,8 @@ const TierTab = ({
       onPress={() => {
         if (!unlocked) {
           Alert.alert(
-            "Tier Locked",
-            `This tier will unlock in ${formattedTime()}. Complete previous tiers first!`
+            "Level Locked",
+            `This level will unlock in ${formattedTime()}. Complete previous levels first!`
           );
           return;
         }
@@ -118,10 +118,10 @@ const TierTab = ({
 
 export default function TierSelection({ navigation }) {
   const [gameStartTime] = useState(new Date());
-  const [unlockedTiers, setUnlockedTiers] = useState({ Spicer: true });
+  const [unlockedTiers, setUnlockedTiers] = useState({ Starter: true });
   const [timeRemaining, setTimeRemaining] = useState({});
   const [progress, setProgress] = useState({
-    Spicer: 100,
+    Starter: 100,
     Wild: 0,
     Extreme: 0,
     "Dark Finale": 0,
@@ -147,14 +147,14 @@ export default function TierSelection({ navigation }) {
 
   const unlockAllTiers = () => {
     const allUnlocked = {
-      Spicer: true,
+      Starter: true,
       Wild: true,
       Extreme: true,
       "Dark Finale": true,
     };
     setUnlockedTiers(allUnlocked);
     setProgress({
-      Spicer: 100,
+      Starter: 100,
       Wild: 100,
       Extreme: 100,
       "Dark Finale": 100,
@@ -178,9 +178,9 @@ export default function TierSelection({ navigation }) {
           Alert.alert("Admin Mode", "All tiers unlocked! 🎉");
         } else {
           // Reset to default state
-          setUnlockedTiers({ Spicer: true });
+          setUnlockedTiers({ Starter: true });
           setProgress({
-            Spicer: 100,
+            Starter: 100,
             Wild: 0,
             Extreme: 0,
             "Dark Finale": 0,
@@ -216,7 +216,7 @@ export default function TierSelection({ navigation }) {
             100,
             ((tierData.unlockTime - timeLeft) / tierData.unlockTime) * 100
           );
-          newProgress[tierName] = tierName === "Spicer" ? 100 : tierProgress;
+          newProgress[tierName] = tierName === "Starter" ? 100 : tierProgress;
         });
 
         setUnlockedTiers(newUnlockedTiers);
@@ -238,7 +238,7 @@ export default function TierSelection({ navigation }) {
     <View style={styles.container}>
       <TouchableOpacity onPress={handleTitlePress}>
         <Text style={styles.title}>
-          Select Your Tier {isAdminMode ? "🔓" : ""}
+          Select Your Level {isAdminMode ? "🔓" : ""}
         </Text>
       </TouchableOpacity>
       <View style={styles.tiersContainer}>
@@ -264,12 +264,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 20,
+    paddingTop: 40,
   },
   title: {
     fontSize: 32,
     fontWeight: "bold",
     color: "#333",
     marginBottom: 30,
+    marginTop: 20,
     textAlign: "center",
   },
   tiersContainer: {
