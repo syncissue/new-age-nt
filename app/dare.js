@@ -9,6 +9,8 @@ import {
   Animated,
   Dimensions,
   Image,
+  SafeAreaView,
+  Platform,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { LinearGradient } from "expo-linear-gradient";
@@ -31,7 +33,7 @@ const SHOTS_OPTIONS = [
 ];
 
 const TIER_ACTS = {
-  Spicer: [
+  Starter: [
     "Wink again",
     "Blow a kiss",
     "Give a compliment",
@@ -106,42 +108,255 @@ const SmokeEffect = () => {
   );
 };
 
-// Update TIER_STYLES with enhanced styling
+// Add Confetti Effect Component
+const ConfettiEffect = () => {
+  const confettiColors = ["#FFE082", "#FFF59D", "#FFEE58", "#FDD835"];
+
+  return (
+    <Animatable.View style={StyleSheet.absoluteFill}>
+      {Array(30)
+        .fill()
+        .map((_, i) => (
+          <Animatable.View
+            key={i}
+            animation={{
+              0: {
+                translateY: -20,
+                translateX: Math.random() * SCREEN_WIDTH,
+                scale: 1,
+                rotate: "0deg",
+              },
+              1: {
+                translateY: SCREEN_HEIGHT,
+                translateX:
+                  Math.random() * SCREEN_WIDTH + (Math.random() - 0.5) * 100,
+                scale: 0,
+                rotate: "360deg",
+              },
+            }}
+            duration={2000 + Math.random() * 1000}
+            delay={Math.random() * 2000}
+            iterationCount="infinite"
+            easing="linear"
+            style={{
+              position: "absolute",
+              backgroundColor:
+                confettiColors[
+                  Math.floor(Math.random() * confettiColors.length)
+                ],
+              width: 8,
+              height: 8,
+              borderRadius: Math.random() > 0.5 ? 4 : 0,
+            }}
+          />
+        ))}
+    </Animatable.View>
+  );
+};
+
+// Update TIER_STYLES with new color scheme
 const TIER_STYLES = {
-  Spicer: {
-    colors: ["#4CAF50", "#2E7D32"],
-    textColor: "#FFFFFF",
-    buttonColor: "#2E7D32",
-    accentColor: "#81C784",
-    buttonText: "Next Dare 🎲",
+  Starter: {
+    colors: ["#eba8a2", "#eba8a2"],
+    textColor: "#000000",
+    buttonColor: "#eba8a2",
+    accentColor: "#000000",
+    buttonText: "Go!",
     containerStyle: {
-      backgroundColor: "transparent",
+      flex: 1,
+      backgroundColor: "#eba8a2",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      paddingVertical: 8,
+      paddingTop: 25,
     },
-    textStyle: {
-      textShadowColor: "rgba(0,0,0,0.5)",
-      textShadowOffset: { width: 1, height: 1 },
-      textShadowRadius: 2,
+    titleStyle: {
+      fontFamily: "BubblegumSans_400Regular",
+      fontSize: 26,
+      color: "#000000",
+      textAlign: "center",
+      marginTop: 20,
+      marginBottom: 12,
+      fontWeight: "bold",
     },
-    buttonStyle: {
-      backgroundColor: "#2E7D32",
-      borderWidth: 2,
-      borderColor: "#81C784",
+    mainContentContainer: {
+      backgroundColor: "rgba(255, 255, 255, 0.9)",
+      borderRadius: 25,
+      borderWidth: 3,
+      borderColor: "#d88a84",
+      padding: 18,
+      width: "88%",
+      alignItems: "center",
+      justifyContent: "center",
+      marginVertical: 10,
+      marginTop: 5,
       shadowColor: "#000",
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.25,
-      shadowRadius: 4,
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.2,
+      shadowRadius: 8,
       elevation: 5,
     },
-    pickerStyle: {
-      backgroundColor: "rgba(0, 0, 0, 0.3)",
-      borderColor: "#81C784",
-      borderWidth: 2,
+    dareTextStyle: {
+      fontFamily: "BubblegumSans_400Regular",
+      fontSize: 30,
       color: "#000000",
-      dropdownIconColor: "#FFFFFF",
+      textAlign: "center",
+      paddingHorizontal: 18,
+      paddingVertical: 20,
+      backgroundColor: "#ffd4d1",
+      borderRadius: 20,
+      borderWidth: 3,
+      borderColor: "#d88a84",
+      marginBottom: 15,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.15,
+      shadowRadius: 8,
+      elevation: 5,
+      width: "100%",
+      minHeight: 90,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      position: "relative",
     },
-    sounds: {
-      start: "heartbeat",
-      end: "applause",
+    dareLabelStyle: {
+      position: "absolute",
+      top: -15,
+      left: 0,
+      right: 0,
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 1,
+    },
+    dareLabelTextContainer: {
+      backgroundColor: "#d88a84",
+      paddingHorizontal: 15,
+      paddingVertical: 5,
+      borderRadius: 15,
+      borderWidth: 2,
+      borderColor: "#fff",
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 3,
+    },
+    dareLabelText: {
+      fontFamily: "BubblegumSans_400Regular",
+      fontSize: 18,
+      color: "#fff",
+      fontWeight: "bold",
+    },
+    timerStyle: {
+      width: 115,
+      height: 115,
+      borderRadius: 58,
+      backgroundColor: "#eba8a2",
+      justifyContent: "center",
+      alignItems: "center",
+      marginVertical: 12,
+      borderWidth: 8,
+      borderColor: "#eba8a2",
+      position: "relative",
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.2,
+      shadowRadius: 8,
+      elevation: 5,
+    },
+    timerBorderStyle: {
+      position: "absolute",
+      top: -8,
+      left: -8,
+      right: -8,
+      bottom: -8,
+      borderRadius: 68,
+      borderWidth: 3,
+      borderColor: "#d88a84",
+      borderStyle: "dashed",
+    },
+    timerTextStyle: {
+      fontFamily: "BubblegumSans_400Regular",
+      fontSize: 45,
+      color: "#000000",
+      fontWeight: "bold",
+    },
+    buttonStyle: {
+      backgroundColor: "#FFFFFF",
+      paddingHorizontal: 35,
+      paddingVertical: 12,
+      borderRadius: 30,
+      borderWidth: 3,
+      borderColor: "#d88a84",
+      marginVertical: 8,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 3,
+      minWidth: 145,
+      alignItems: "center",
+    },
+    buttonTextStyle: {
+      fontFamily: "BubblegumSans_400Regular",
+      fontSize: 22,
+      color: "#000000",
+      fontWeight: "bold",
+    },
+    navigationButtonStyle: {
+      backgroundColor: "#eba8a2",
+      paddingHorizontal: 35,
+      paddingVertical: 12,
+      borderRadius: 30,
+      borderWidth: 3,
+      borderColor: "#d88a84",
+      marginVertical: 8,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 3,
+      minWidth: 190,
+      alignItems: "center",
+    },
+    nextDareButton: {
+      backgroundColor: "#FFFFFF",
+      paddingHorizontal: 25,
+      paddingVertical: 12,
+      borderRadius: 30,
+      borderWidth: 3,
+      borderColor: "#d88a84",
+      marginTop: 8,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 3,
+      minWidth: 170,
+      alignItems: "center",
+    },
+    nextDareButtonText: {
+      fontFamily: "BubblegumSans_400Regular",
+      fontSize: 20,
+      color: "#000000",
+      fontWeight: "bold",
+    },
+    endButtonStyle: {
+      backgroundColor: "#FF6B6B",
+      paddingHorizontal: 40,
+      paddingVertical: 15,
+      borderRadius: 30,
+      borderWidth: 3,
+      borderColor: "#d88a84",
+      marginVertical: 10,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 3,
+      minWidth: 200,
+      alignItems: "center",
     },
   },
   Wild: {
@@ -237,24 +452,43 @@ const SOUND_FILES = {
   giggle: require("../assets/sounds/giggle.mp3"),
 };
 
+// Get screen dimensions and safe area
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
+const RESPONSIVE_FONT_SCALE = Math.min(SCREEN_WIDTH, SCREEN_HEIGHT) / 400;
+const BASE_PADDING = Math.min(8, SCREEN_WIDTH * 0.02);
+const STATUS_BAR_HEIGHT = Platform.OS === "ios" ? 44 : 24;
+const BOTTOM_SPACING = Platform.OS === "ios" ? 34 : 16;
+
 // Base styles that don't depend on dynamic values
 const baseStyles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
-    padding: 20,
-    backgroundColor: "#fff",
+    paddingTop: STATUS_BAR_HEIGHT + 20,
+    paddingBottom: BOTTOM_SPACING + BASE_PADDING,
+    paddingHorizontal: BASE_PADDING,
+  },
+  contentContainer: {
+    flex: 1,
+    width: "100%",
+    maxWidth: SCREEN_WIDTH,
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 10,
   },
   loadingText: {
-    marginTop: 10,
-    fontSize: 16,
+    marginTop: 10 * RESPONSIVE_FONT_SCALE,
+    fontSize: 16 * RESPONSIVE_FONT_SCALE,
     color: "#666",
   },
   errorText: {
-    fontSize: 18,
+    fontSize: 18 * RESPONSIVE_FONT_SCALE,
     color: "#FF3B30",
-    marginBottom: 20,
+    marginBottom: 20 * RESPONSIVE_FONT_SCALE,
     textAlign: "center",
   },
   lightningOverlay: {
@@ -301,72 +535,80 @@ const getDefaultStyles = (fontsLoaded) =>
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      padding: 20,
+      padding: BASE_PADDING,
       backgroundColor: "#fff",
     },
     dareContainer: {
+      flex: 1,
+      justifyContent: "center",
       alignItems: "center",
-      marginBottom: 40,
       width: "100%",
+      padding: 20,
     },
     tierText: {
-      fontSize: 28,
+      fontSize: 32 * RESPONSIVE_FONT_SCALE,
       fontWeight: "bold",
-      color: "#007AFF",
-      marginBottom: 20,
+      color: "#5D4037", // Dark brown for contrast
+      marginBottom: 10 * RESPONSIVE_FONT_SCALE,
+      textAlign: "center",
     },
     dareText: {
-      fontSize: 24,
+      fontSize: 20 * RESPONSIVE_FONT_SCALE,
       textAlign: "center",
-      marginBottom: 20,
+      marginBottom: 5 * RESPONSIVE_FONT_SCALE,
       color: "#333",
-      lineHeight: 32,
+      lineHeight: 24 * RESPONSIVE_FONT_SCALE,
     },
     pickerContainer: {
       width: "100%",
-      marginVertical: 20,
+      alignItems: "center",
+      justifyContent: "center",
+      padding: 20,
     },
     picker: {
       width: "100%",
       backgroundColor: "#f5f5f5",
-      marginBottom: 10,
+      marginBottom: 3 * RESPONSIVE_FONT_SCALE,
     },
     labelText: {
-      fontSize: 16,
+      fontSize: 20 * RESPONSIVE_FONT_SCALE,
       fontWeight: "600",
-      color: "#333",
-      marginBottom: 5,
+      color: "#FFFFFF",
+      marginBottom: 8 * RESPONSIVE_FONT_SCALE,
     },
     buttonContainer: {
       width: "100%",
+      maxWidth: SCREEN_WIDTH,
       alignItems: "center",
+      marginTop: 0,
+      paddingBottom: 10 * RESPONSIVE_FONT_SCALE,
     },
     button: {
-      padding: 15,
-      borderRadius: 8,
-      marginVertical: 8,
-      width: "80%",
       alignItems: "center",
+      justifyContent: "center",
     },
     scoresButton: {
-      backgroundColor: "#FFD700",
-      padding: 10,
+      backgroundColor: "rgba(255, 255, 255, 0.3)",
+      padding: 6 * RESPONSIVE_FONT_SCALE,
       borderRadius: 8,
-      marginBottom: 20,
+      marginBottom: 5 * RESPONSIVE_FONT_SCALE,
       alignSelf: "center",
+      borderWidth: 1,
+      borderColor: "#FFB300",
     },
     dareButton: {
       backgroundColor: "#4CAF50",
-      marginTop: 20,
+      marginTop: 20 * RESPONSIVE_FONT_SCALE,
     },
     tierButton: (tier) => {
       const style = TIER_STYLES[tier];
       return {
         ...(style?.buttonStyle || {}),
-        padding: 15,
+        padding: 15 * RESPONSIVE_FONT_SCALE,
         borderRadius: 8,
-        marginVertical: 8,
+        marginVertical: 8 * RESPONSIVE_FONT_SCALE,
         width: "80%",
+        maxWidth: 300,
         alignItems: "center",
       };
     },
@@ -374,9 +616,7 @@ const getDefaultStyles = (fontsLoaded) =>
       backgroundColor: "#FF3B30",
     },
     buttonText: {
-      color: "white",
-      fontSize: 18,
-      fontWeight: "600",
+      textAlign: "center",
     },
     tierContainer: (tier) => {
       const style = TIER_STYLES[tier];
@@ -384,20 +624,22 @@ const getDefaultStyles = (fontsLoaded) =>
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        padding: 20,
+        padding: BASE_PADDING,
+        maxWidth: SCREEN_WIDTH,
         ...(style?.containerStyle || {}),
       };
     },
     tierDareContainer: (tier) => {
       const style = TIER_STYLES[tier];
       return {
-        backgroundColor: "rgba(0, 0, 0, 0.2)",
-        padding: 20,
-        borderRadius: 15,
-        borderWidth: 2,
-        borderColor: style?.accentColor || "#fff",
-        marginTop: 20,
-        width: "100%",
+        backgroundColor: "rgba(255, 255, 255, 0.2)",
+        padding: 6 * RESPONSIVE_FONT_SCALE,
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: "#FFB300",
+        marginTop: 5 * RESPONSIVE_FONT_SCALE,
+        width: "98%",
+        maxWidth: SCREEN_WIDTH * 0.98,
         alignItems: "center",
       };
     },
@@ -405,11 +647,13 @@ const getDefaultStyles = (fontsLoaded) =>
       const style = TIER_STYLES[tier];
       const baseStyle = {
         fontFamily: getFontFamily(tier, fontsLoaded),
-        fontSize: 32,
+        fontSize: 32 * RESPONSIVE_FONT_SCALE,
         color: style?.textColor || "#FFFFFF",
         textShadowColor: "rgba(0,0,0,0.5)",
         textShadowOffset: { width: 1, height: 1 },
         textShadowRadius: 2,
+        textAlign: "center",
+        paddingHorizontal: BASE_PADDING,
       };
 
       if (tier === "Extreme") {
@@ -439,21 +683,25 @@ const getDefaultStyles = (fontsLoaded) =>
     },
     tierDareText: (tier) => {
       const style = TIER_STYLES[tier];
+      if (tier === "Starter") {
+        return style.dareTextStyle;
+      }
       const baseStyle = {
         fontFamily: getFontFamily(tier, fontsLoaded),
-        fontSize: 32,
-        color: style?.textColor || "#FFFFFF",
+        fontSize: 28 * RESPONSIVE_FONT_SCALE,
+        color: "#5D4037", // Dark brown for contrast
         textAlign: "center",
-        marginVertical: 25,
-        lineHeight: 42,
-        textShadowColor: "rgba(0,0,0,0.75)",
-        textShadowOffset: { width: 2, height: 2 },
-        textShadowRadius: 4,
-        padding: 15,
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
-        borderRadius: 12,
-        borderWidth: 2,
-        borderColor: style?.accentColor || "#FFFFFF",
+        marginVertical: 8 * RESPONSIVE_FONT_SCALE,
+        lineHeight: 34 * RESPONSIVE_FONT_SCALE,
+        textShadowColor: "rgba(0,0,0,0.2)",
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 2 * RESPONSIVE_FONT_SCALE,
+        padding: 20 * RESPONSIVE_FONT_SCALE,
+        backgroundColor: "rgba(255, 255, 255, 0.3)",
+        borderRadius: 12 * RESPONSIVE_FONT_SCALE,
+        borderWidth: 1,
+        borderColor: "#FFB300",
+        maxWidth: "90%",
       };
 
       if (tier === "Extreme") {
@@ -461,7 +709,7 @@ const getDefaultStyles = (fontsLoaded) =>
           ...baseStyle,
           textShadowColor: "#FFEB3B",
           textShadowOffset: { width: 2, height: 2 },
-          textShadowRadius: 4,
+          textShadowRadius: 4 * RESPONSIVE_FONT_SCALE,
           color: "#FFFFFF",
           borderColor: "#FFEB3B",
           backgroundColor: "rgba(255, 109, 0, 0.3)",
@@ -473,7 +721,7 @@ const getDefaultStyles = (fontsLoaded) =>
           ...baseStyle,
           textShadowColor: "#E040FB",
           textShadowOffset: { width: 0, height: 0 },
-          textShadowRadius: 15,
+          textShadowRadius: 15 * RESPONSIVE_FONT_SCALE,
           color: "#E040FB",
           borderColor: "#E040FB",
           backgroundColor: "rgba(156, 39, 176, 0.2)",
@@ -489,10 +737,10 @@ const getDefaultStyles = (fontsLoaded) =>
       const style = TIER_STYLES[tier];
       return {
         width: "100%",
-        marginVertical: 20,
-        padding: 15,
-        borderRadius: 10,
-        borderWidth: 2,
+        marginVertical: 5 * RESPONSIVE_FONT_SCALE,
+        padding: 6 * RESPONSIVE_FONT_SCALE,
+        borderRadius: 6 * RESPONSIVE_FONT_SCALE,
+        borderWidth: 1,
         backgroundColor: "rgba(0, 0, 0, 0.2)",
         borderColor: style?.accentColor || "#fff",
       };
@@ -501,8 +749,8 @@ const getDefaultStyles = (fontsLoaded) =>
       const style = TIER_STYLES[tier];
       return {
         width: "100%",
-        height: 50,
-        marginBottom: 10,
+        height: 36 * RESPONSIVE_FONT_SCALE,
+        marginBottom: 3 * RESPONSIVE_FONT_SCALE,
         color: style?.textColor || "#FFFFFF",
         backgroundColor: "rgba(0, 0, 0, 0.3)",
       };
@@ -511,23 +759,23 @@ const getDefaultStyles = (fontsLoaded) =>
       const style = TIER_STYLES[tier];
       return {
         color: style?.textColor || "#FFFFFF",
-        fontSize: 24,
+        fontSize: 20 * RESPONSIVE_FONT_SCALE,
         fontFamily: getFontFamily(tier, fontsLoaded),
-        marginBottom: 10,
+        marginBottom: 5 * RESPONSIVE_FONT_SCALE,
         textShadowColor: "rgba(0,0,0,0.5)",
         textShadowOffset: { width: 1, height: 1 },
-        textShadowRadius: 2,
+        textShadowRadius: 2 * RESPONSIVE_FONT_SCALE,
       };
     },
     tierButtonContainer: (tier) => ({
-      marginTop: tier ? 20 : 0,
+      marginTop: tier ? 20 * RESPONSIVE_FONT_SCALE : 0,
     }),
     tierNavigationButton: (tier) => {
       const style = TIER_STYLES[tier];
       return tier
         ? {
             backgroundColor: style?.buttonColor,
-            borderWidth: 2,
+            borderWidth: 2 * RESPONSIVE_FONT_SCALE,
             borderColor: style?.textColor,
           }
         : {};
@@ -536,13 +784,13 @@ const getDefaultStyles = (fontsLoaded) =>
       const style = TIER_STYLES[tier];
       return {
         fontFamily: getFontFamily(tier, fontsLoaded),
-        fontSize: 24,
+        fontSize: 24 * RESPONSIVE_FONT_SCALE,
         color: style?.textColor || "#fff",
         ...(style?.textOutlineColor
           ? {
               textShadowColor: style.textOutlineColor,
               textShadowOffset: { width: 1, height: 1 },
-              textShadowRadius: 1,
+              textShadowRadius: 1 * RESPONSIVE_FONT_SCALE,
             }
           : {}),
       };
@@ -637,6 +885,50 @@ const getStyledText = (text, style, tier, fontsLoaded) => {
   return <Text style={baseStyle}>{text}</Text>;
 };
 
+// Modified timer component
+const Timer = ({ style, textStyle, start }) => {
+  const [time, setTime] = useState(30);
+  const [isRunning, setIsRunning] = useState(false);
+
+  // Reset and start timer when start prop changes
+  useEffect(() => {
+    if (start) {
+      setTime(30);
+      setIsRunning(true);
+    } else {
+      setIsRunning(false);
+    }
+  }, [start]);
+
+  // Timer countdown logic
+  useEffect(() => {
+    let interval;
+    if (isRunning && time > 0) {
+      interval = setInterval(() => {
+        setTime((prevTime) => {
+          if (prevTime <= 1) {
+            clearInterval(interval);
+            setIsRunning(false);
+            return 0;
+          }
+          return prevTime - 1;
+        });
+      }, 1000);
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isRunning, time]);
+
+  return (
+    <View style={style}>
+      <View style={TIER_STYLES.Starter.timerBorderStyle} />
+      <Text style={textStyle}>{time}</Text>
+    </View>
+  );
+};
+
 // Move styles to the top level
 const styles = StyleSheet.create({
   loadingContainer: {
@@ -677,323 +969,526 @@ const styles = StyleSheet.create({
 
 const Dare = ({ route, navigation }) => {
   const { tier } = route.params;
-  const [selectedShot, setSelectedShot] = useState(SHOTS_OPTIONS[0]);
-  const [selectedAct, setSelectedAct] = useState(TIER_ACTS[tier][0]);
   const [dare, setDare] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  // Load all required fonts
-  const [fontsLoaded] = useFonts({
-    AmaticSC_400Regular,
-    AmaticSC_700Bold,
-    BubblegumSans_400Regular,
-    Creepster_400Regular,
+  const [nextDare, setNextDare] = useState(null);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [time, setTime] = useState(30);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [scores, setScores] = useState({ couple1: 0, couple2: 0 });
+  const [showPointAnimation, setShowPointAnimation] = useState({
+    couple1: false,
+    couple2: false,
   });
 
-  // Font loading effect
-  useEffect(() => {
-    const checkFonts = async () => {
-      try {
-        if (!fontsLoaded) {
-          console.log("Fonts are still loading...");
-          return;
-        }
-
-        console.log("Fonts loaded successfully!");
-        console.log("Available fonts:", {
-          AmaticSC_400Regular: !!AmaticSC_400Regular,
-          AmaticSC_700Bold: !!AmaticSC_700Bold,
-          BubblegumSans_400Regular: !!BubblegumSans_400Regular,
-          Creepster_400Regular: !!Creepster_400Regular,
-        });
-
-        // Verify each required font
-        const requiredFonts = {
-          [FONTS.AMATIC_REGULAR]: AmaticSC_400Regular,
-          [FONTS.AMATIC_BOLD]: AmaticSC_700Bold,
-          [FONTS.BUBBLEGUM]: BubblegumSans_400Regular,
-          [FONTS.CREEPSTER]: Creepster_400Regular,
-        };
-
-        const missingFonts = Object.entries(requiredFonts)
-          .filter(([_, font]) => !font)
-          .map(([name]) => name);
-
-        if (missingFonts.length > 0) {
-          console.warn("Missing fonts:", missingFonts);
-          setError(`Missing required fonts: ${missingFonts.join(", ")}`);
-        }
-      } catch (e) {
-        console.error("Font loading error:", e);
-        setError("Error loading fonts. Please try again.");
-      }
-    };
-
-    checkFonts();
-  }, [fontsLoaded]);
-
-  // Initialize dynamic styles after font check
-  const dynamicStyles = useMemo(
-    () => getDefaultStyles(fontsLoaded),
-    [fontsLoaded]
-  );
-  const tierStyle = TIER_STYLES[tier] || TIER_STYLES.Spicer;
-
-  // Tier effect
-  useEffect(() => {
-    if (tier) {
-      const acts = TIER_ACTS[tier] || [];
-      setSelectedAct(acts[0] || "");
-    }
-  }, [tier]);
-
-  // Temporary fetchDare without Firebase
   const fetchDare = useCallback(() => {
-    setLoading(true);
-    setTimeout(() => {
-      const dummyDares = [
-        "Take a fun dare!",
-        "Show your best move",
-        "Tell a joke",
-        "Make a funny face",
-        "Do a dance move",
-      ];
-      const randomDare =
-        dummyDares[Math.floor(Math.random() * dummyDares.length)];
-      setDare({ text: randomDare });
-      setLoading(false);
-    }, 500);
+    const dummyDares = [
+      "Do a dance move",
+      "Show your best move",
+      "Tell a joke",
+      "Make a funny face",
+      "Do a dance move",
+    ];
+    const randomDare =
+      dummyDares[Math.floor(Math.random() * dummyDares.length)];
+    return { text: randomDare };
   }, []);
 
-  // Loading state
-  if (!fontsLoaded) {
-    return (
-      <View
-        style={[
-          styles.loadingContainer,
-          { backgroundColor: tierStyle.colors[0] },
-        ]}
-      >
-        <ActivityIndicator size="large" color="#FFFFFF" />
-        <Text style={[styles.loadingText, { color: "#FFFFFF" }]}>
-          Loading fonts...
-        </Text>
-      </View>
-    );
-  }
+  const handleNextDare = useCallback(() => {
+    const newDare = fetchDare();
+    setNextDare(newDare);
+    setDare(null);
+    setIsTimerRunning(false);
+    setTime(30);
+  }, [fetchDare]);
 
-  // Error state with retry option
-  if (error) {
+  const handleGo = useCallback(() => {
+    if (nextDare) {
+      setDare(nextDare);
+      setNextDare(null);
+      setIsTimerRunning(true);
+      setTime(30);
+    } else if (dare && !isTimerRunning) {
+      setIsTimerRunning(true);
+    }
+  }, [nextDare, dare, isTimerRunning]);
+
+  const handlePause = useCallback(() => {
+    setIsTimerRunning(false);
+  }, []);
+
+  const handleScore = useCallback((couple) => {
+    setScores((prev) => ({
+      ...prev,
+      [couple]: prev[couple] + 1,
+    }));
+    setShowPointAnimation((prev) => ({
+      ...prev,
+      [couple]: true,
+    }));
+    setTimeout(() => {
+      setShowPointAnimation((prev) => ({
+        ...prev,
+        [couple]: false,
+      }));
+    }, 1000);
+  }, []);
+
+  useEffect(() => {
+    if (!dare && !nextDare && tier === "Starter") {
+      handleNextDare();
+    }
+  }, [tier, handleNextDare]);
+
+  useEffect(() => {
+    let interval;
+    if (isTimerRunning && time > 0) {
+      interval = setInterval(() => {
+        setTime((prevTime) => {
+          if (prevTime <= 1) {
+            setIsTimerRunning(false);
+            return 0;
+          }
+          return prevTime - 1;
+        });
+      }, 1000);
+    }
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [isTimerRunning, time]);
+
+  if (tier === "Starter") {
     return (
-      <View
+      <SafeAreaView
         style={[
-          styles.errorContainer,
-          { backgroundColor: tierStyle.colors[0] },
+          baseStyles.safeArea,
+          isDarkMode && { backgroundColor: "#1a1a1a" },
         ]}
       >
-        <Text style={[styles.errorText, { color: "#FFFFFF" }]}>{error}</Text>
-        <TouchableOpacity
+        <View
           style={[
-            styles.retryButton,
-            { backgroundColor: tierStyle.buttonColor },
+            TIER_STYLES[tier].containerStyle,
+            isDarkMode && { backgroundColor: "#2a2a2a" },
           ]}
-          onPress={() => {
-            setError(null);
-            // Force font reload by remounting the component
-            navigation.replace("Dare", { tier });
-          }}
         >
-          <Text style={styles.retryButtonText}>Retry</Text>
-        </TouchableOpacity>
-      </View>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginTop: 25,
+              paddingHorizontal: 20,
+              width: "100%",
+              justifyContent: "center",
+            }}
+          >
+            <Text
+              style={[
+                TIER_STYLES[tier].titleStyle,
+                isDarkMode && { color: "#ffffff" },
+              ]}
+            >
+              Double Trouble: Starter Dares ❤️‍🔥
+            </Text>
+          </View>
+
+          <Animatable.View
+            animation="fadeIn"
+            duration={1000}
+            style={[
+              TIER_STYLES[tier].mainContentContainer,
+              isDarkMode && { backgroundColor: "rgba(255, 255, 255, 0.1)" },
+            ]}
+          >
+            <Animatable.View
+              animation={dare ? "bounceIn" : "fadeIn"}
+              duration={1000}
+              style={[
+                TIER_STYLES[tier].dareTextStyle,
+                isDarkMode && {
+                  backgroundColor: "#3a3a3a",
+                  borderColor: "#d88a84",
+                },
+              ]}
+            >
+              <View style={TIER_STYLES[tier].dareLabelStyle}>
+                <View style={TIER_STYLES[tier].dareLabelTextContainer}>
+                  <Text style={TIER_STYLES[tier].dareLabelText}>DARE</Text>
+                </View>
+              </View>
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                  paddingTop: 15,
+                }}
+              >
+                <Text
+                  style={[
+                    {
+                      fontFamily: "BubblegumSans_400Regular",
+                      fontSize: 32,
+                      color: isDarkMode ? "#ffffff" : "#000000",
+                      textAlign: "center",
+                      width: "100%",
+                      paddingHorizontal: 10,
+                    },
+                  ]}
+                >
+                  {dare
+                    ? dare.text
+                    : nextDare
+                    ? nextDare.text
+                    : "Click Next Dare to start"}
+                </Text>
+              </View>
+            </Animatable.View>
+
+            <Animatable.View
+              animation="pulse"
+              iterationCount="infinite"
+              duration={2000}
+              style={TIER_STYLES[tier].timerStyle}
+            >
+              <View style={TIER_STYLES[tier].timerBorderStyle} />
+              <Text
+                style={[
+                  TIER_STYLES[tier].timerTextStyle,
+                  isDarkMode && { color: "#ffffff" },
+                ]}
+              >
+                {time}
+              </Text>
+            </Animatable.View>
+
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-around",
+                width: "100%",
+                marginVertical: 10,
+              }}
+            >
+              <TouchableOpacity
+                style={[
+                  {
+                    backgroundColor: "#fff",
+                    padding: 12,
+                    borderRadius: 20,
+                    borderWidth: 3,
+                    borderColor: "#ff69b4",
+                    minWidth: 145,
+                    alignItems: "center",
+                    shadowColor: "#000",
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.2,
+                    shadowRadius: 4,
+                    elevation: 3,
+                  },
+                  isDarkMode && { backgroundColor: "#3a3a3a" },
+                ]}
+                onPress={() => handleScore("couple1")}
+              >
+                <Text
+                  style={[
+                    {
+                      fontFamily: "BubblegumSans_400Regular",
+                      fontSize: 17,
+                      color: "#000",
+                      textAlign: "center",
+                    },
+                    isDarkMode && { color: "#fff" },
+                  ]}
+                >
+                  ❤️ Couple 1 👫{"\n"}Score: {scores.couple1}
+                </Text>
+                {showPointAnimation.couple1 && (
+                  <Animatable.Text
+                    animation="bounceOut"
+                    duration={1000}
+                    style={{
+                      position: "absolute",
+                      top: -20,
+                      fontSize: 20,
+                      color: "#ff69b4",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    🏆 +1 Point!
+                  </Animatable.Text>
+                )}
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={[
+                  {
+                    backgroundColor: "#fff",
+                    padding: 12,
+                    borderRadius: 20,
+                    borderWidth: 3,
+                    borderColor: "#4169e1",
+                    minWidth: 145,
+                    alignItems: "center",
+                    shadowColor: "#000",
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.2,
+                    shadowRadius: 4,
+                    elevation: 3,
+                  },
+                  isDarkMode && { backgroundColor: "#3a3a3a" },
+                ]}
+                onPress={() => handleScore("couple2")}
+              >
+                <Text
+                  style={[
+                    {
+                      fontFamily: "BubblegumSans_400Regular",
+                      fontSize: 17,
+                      color: "#000",
+                      textAlign: "center",
+                    },
+                    isDarkMode && { color: "#fff" },
+                  ]}
+                >
+                  💙 Couple 2 👫{"\n"}Score: {scores.couple2}
+                </Text>
+                {showPointAnimation.couple2 && (
+                  <Animatable.Text
+                    animation="bounceOut"
+                    duration={1000}
+                    style={{
+                      position: "absolute",
+                      top: -20,
+                      fontSize: 20,
+                      color: "#4169e1",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    🏆 +1 Point!
+                  </Animatable.Text>
+                )}
+              </TouchableOpacity>
+            </View>
+
+            <Animatable.View
+              animation="fadeInUp"
+              duration={1000}
+              style={{ width: "100%", alignItems: "center", marginTop: 10 }}
+            >
+              <TouchableOpacity
+                style={[
+                  TIER_STYLES[tier].buttonStyle,
+                  !nextDare && !dare && { opacity: 0.5 },
+                ]}
+                onPress={isTimerRunning ? handlePause : handleGo}
+                disabled={!nextDare && !dare}
+              >
+                <Text
+                  style={[
+                    TIER_STYLES[tier].buttonTextStyle,
+                    isDarkMode && { color: "#ffffff" },
+                  ]}
+                >
+                  {isTimerRunning ? "⏸ Pause" : dare ? "Resume 🎯" : "Go! 🎯"}
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={TIER_STYLES[tier].nextDareButton}
+                onPress={handleNextDare}
+              >
+                <Text
+                  style={[
+                    TIER_STYLES[tier].nextDareButtonText,
+                    isDarkMode && { color: "#ffffff" },
+                  ]}
+                >
+                  🎲 Next Dare
+                </Text>
+              </TouchableOpacity>
+            </Animatable.View>
+          </Animatable.View>
+
+          <View
+            style={{
+              width: "100%",
+              alignItems: "center",
+              marginTop: -5,
+            }}
+          >
+            <TouchableOpacity
+              style={[
+                TIER_STYLES[tier].navigationButtonStyle,
+                isDarkMode && { backgroundColor: "#3a3a3a" },
+              ]}
+              onPress={() => navigation.navigate("TierSelection")}
+            >
+              <Text
+                style={[
+                  TIER_STYLES[tier].buttonTextStyle,
+                  isDarkMode && { color: "#ffffff" },
+                ]}
+              >
+                🎮 Pick Another Level
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[
+                TIER_STYLES[tier].endButtonStyle,
+                isDarkMode && { backgroundColor: "#ff4444" },
+                { marginTop: 5 },
+              ]}
+              onPress={() => navigation.navigate("End")}
+            >
+              <Text
+                style={[
+                  TIER_STYLES[tier].buttonTextStyle,
+                  isDarkMode && { color: "#ffffff" },
+                ]}
+              >
+                🌙 End the Night
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={[dynamicStyles.container, dynamicStyles.tierContainer(tier)]}>
-      <LinearGradient
-        colors={tierStyle.colors}
-        style={StyleSheet.absoluteFill}
-      />
-
-      {tierStyle.backgroundEffect && <tierStyle.backgroundEffect />}
-
-      <View
-        style={[
-          dynamicStyles.dareContainer,
-          dynamicStyles.tierDareContainer(tier),
-        ]}
-      >
-        {getStyledText(
-          `Tier: ${tier}`,
-          [dynamicStyles.tierText, dynamicStyles.tierSpecificText(tier)],
-          tier,
-          fontsLoaded
-        )}
-
-        <TouchableOpacity
-          style={[dynamicStyles.scoresButton, dynamicStyles.tierButton(tier)]}
-          onPress={() => navigation.navigate("Scores")}
-        >
-          <Text
-            style={[
-              dynamicStyles.buttonText,
-              dynamicStyles.tierButtonText(tier),
-            ]}
-          >
-            View Scores 🏆
-          </Text>
-        </TouchableOpacity>
-
-        <Text
-          style={[dynamicStyles.dareText, dynamicStyles.tierDareText(tier)]}
-        >
-          {dare?.text || "No dare available"}
-        </Text>
-
+    <SafeAreaView
+      style={[
+        baseStyles.safeArea,
+        isDarkMode && { backgroundColor: "#1a1a1a" },
+      ]}
+    >
+      {(() => {
+        const BackgroundEffect = TIER_STYLES[tier].backgroundEffect;
+        if (BackgroundEffect) {
+          return <BackgroundEffect />;
+        }
+        return null;
+      })()}
+      <View style={baseStyles.contentContainer}>
         <View
           style={[
-            dynamicStyles.pickerContainer,
-            dynamicStyles.tierPickerContainer(tier),
+            getDefaultStyles(true).dareContainer,
+            getDefaultStyles(true).tierDareContainer(tier),
           ]}
-        >
-          <Text
-            style={[dynamicStyles.labelText, dynamicStyles.tierLabelText(tier)]}
-          >
-            Choose Shot:
-          </Text>
-          <View
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.3)",
-              borderRadius: 8,
-              marginBottom: 10,
-              overflow: "hidden",
-              borderWidth: 1,
-              borderColor: tierStyle.accentColor || "#FFFFFF",
-            }}
-          >
-            <Picker
-              selectedValue={selectedShot}
-              onValueChange={setSelectedShot}
-              style={{
-                width: "100%",
-                color: "#000000",
-                backgroundColor: "rgba(255, 255, 255, 0.9)",
-              }}
-              dropdownIconColor={tierStyle.textColor}
-              mode="dropdown"
-            >
-              {SHOTS_OPTIONS.map((shot) => (
-                <Picker.Item
-                  key={shot}
-                  label={shot}
-                  value={shot}
-                  color="#000000"
-                />
-              ))}
-            </Picker>
-          </View>
-
-          <Text
-            style={[dynamicStyles.labelText, dynamicStyles.tierLabelText(tier)]}
-          >
-            Choose Act:
-          </Text>
-          <View
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.3)",
-              borderRadius: 8,
-              marginBottom: 10,
-              overflow: "hidden",
-              borderWidth: 1,
-              borderColor: tierStyle.accentColor || "#FFFFFF",
-            }}
-          >
-            <Picker
-              selectedValue={selectedAct}
-              onValueChange={setSelectedAct}
-              style={{
-                width: "100%",
-                color: "#000000",
-                backgroundColor: "rgba(255, 255, 255, 0.9)",
-              }}
-              dropdownIconColor={tierStyle.textColor}
-              mode="dropdown"
-            >
-              {TIER_ACTS[tier].map((act) => (
-                <Picker.Item
-                  key={act}
-                  label={act}
-                  value={act}
-                  color="#000000"
-                />
-              ))}
-            </Picker>
-          </View>
-        </View>
-
-        <TouchableOpacity
-          style={[
-            dynamicStyles.button,
-            dynamicStyles.dareButton,
-            dynamicStyles.tierDareButton(tier),
-            tierStyle.buttonStyle,
-          ]}
-          onPress={fetchDare}
         >
           {getStyledText(
-            tierStyle.buttonText || "Next Dare 🎲",
-            [dynamicStyles.buttonText, dynamicStyles.tierButtonText(tier)],
             tier,
-            fontsLoaded
+            [
+              getDefaultStyles(true).tierText,
+              getDefaultStyles(true).tierSpecificText(tier),
+            ],
+            tier,
+            true
           )}
-        </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              getDefaultStyles(true).scoresButton,
+              getDefaultStyles(true).tierButton(tier),
+            ]}
+            onPress={() => navigation.navigate("Scores")}
+          >
+            <Text
+              style={[
+                getDefaultStyles(true).buttonText,
+                getDefaultStyles(true).tierButtonText(tier),
+              ]}
+            >
+              View Scores
+            </Text>
+          </TouchableOpacity>
+
+          <View
+            style={[
+              getDefaultStyles(true).pickerContainer,
+              getDefaultStyles(true).tierPickerContainer(tier),
+            ]}
+          >
+            <Text
+              style={[
+                getDefaultStyles(true).dareText,
+                getDefaultStyles(true).tierDareText(tier),
+                { textAlign: "center" },
+              ]}
+            >
+              {dare?.text || "No dare available"}
+            </Text>
+          </View>
+
+          <TouchableOpacity
+            style={[
+              getDefaultStyles(true).button,
+              getDefaultStyles(true).tierButton(tier),
+            ]}
+            onPress={() => {
+              const newDare = fetchDare();
+              setDare(newDare);
+            }}
+          >
+            <Text
+              style={[
+                getDefaultStyles(true).buttonText,
+                getDefaultStyles(true).tierButtonText(tier),
+              ]}
+            >
+              {TIER_STYLES[tier].buttonText}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <View
         style={[
-          dynamicStyles.buttonContainer,
-          dynamicStyles.tierButtonContainer(tier),
+          getDefaultStyles(true).buttonContainer,
+          getDefaultStyles(true).tierButtonContainer(tier),
         ]}
       >
         <TouchableOpacity
           style={[
-            dynamicStyles.button,
-            dynamicStyles.tierButton,
-            dynamicStyles.tierNavigationButton(tier),
+            getDefaultStyles(true).button,
+            getDefaultStyles(true).tierButton,
+            getDefaultStyles(true).tierNavigationButton(tier),
           ]}
           onPress={() => navigation.navigate("TierSelection")}
         >
           <Text
             style={[
-              dynamicStyles.buttonText,
-              dynamicStyles.tierButtonText(tier),
+              getDefaultStyles(true).buttonText,
+              getDefaultStyles(true).tierButtonText(tier),
             ]}
           >
-            Pick Another Tier
+            Pick Another Level
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[
-            dynamicStyles.button,
-            dynamicStyles.endButton,
-            dynamicStyles.tierNavigationButton(tier),
+            getDefaultStyles(true).button,
+            getDefaultStyles(true).endButton,
+            getDefaultStyles(true).tierNavigationButton(tier),
           ]}
           onPress={() => navigation.navigate("End")}
         >
           <Text
             style={[
-              dynamicStyles.buttonText,
-              dynamicStyles.tierButtonText(tier),
+              getDefaultStyles(true).buttonText,
+              getDefaultStyles(true).tierButtonText(tier),
             ]}
           >
             End Game
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
